@@ -9,33 +9,11 @@ const Content = () => {
   const location = useLocation();
   const [page, setPage] = useState<Page | null>(null);
   const [loading, setLoading] = useState(false);
-  // //
-  // const fetchPage = useCallback( async () => {
-  //   try {
-  //     setLoading(true);
-  //     let url = '/home'
-  //     if (pageName) {
-  //      url = '/' + pageName;
-  //     }
-  //     const pageResponse = await axiosApi.get<Page>(url +'.json');
-  //     console.log(pageResponse.data);
-  //     setPage(pageResponse.data);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }, [pageName]);
 
-
-
-  // useEffect(() => {
-  //   void fetchPage;
-  // }, [fetchPage]);
-  // console.log(page);
-  //
-  const fetchResponse = async (link: string) => {
+  const fetchResponse = async (url: string) => {
     try {
       setLoading(true);
-      const pageResponse = await axiosApi.get<Page>(link);
+      const pageResponse = await axiosApi.get<Page>(url);
       setPage(pageResponse.data);
     } finally {
       setLoading(false);

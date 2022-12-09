@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from "./components/Navbar/Navbar";
 import {Route, Routes} from "react-router-dom";
 import Content from "./containers/Content/Content";
+import EditPage from "./containers/EditPage/EditPage";
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
           )}/>
           <Route path="/" element={(
             <Content/>
+          )}/>
+          <Route path="/pages/admin" element={(
+            <EditPage/>
           )}/>
         </Routes>
       </div>
